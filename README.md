@@ -39,8 +39,8 @@ Bug Bounty AI Agent is an intelligent, automated security testing tool that leve
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/bugbounty-ai-agent.git
-cd bugbounty-ai-agent
+git clone https://github.com/m4zd1/ai_agent_bugbounty
+cd ai_agent_bugbounty
 
 # Install dependencies
 pip install -r requirements.txt
