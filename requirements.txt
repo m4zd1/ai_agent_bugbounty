@@ -1,0 +1,93 @@
+# Core AI & LLM
+openai
+anthropic
+langchain
+langchain-openai
+langchain-community
+chromadb
+tiktoken
+
+# Network & Reconnaissance
+requests
+aiohttp
+httpx
+dnspython
+python-nmap
+scapy
+socket
+whois
+dnsrecon
+theHarvester
+
+# Web Security & Scanning
+beautifulsoup4
+selenium
+playwright
+scrapy
+httpx
+wappalyzer
+nikto
+sqlmap
+whatweb
+gobuster
+
+# Security APIs & Intelligence
+shodan
+censys
+securitytrails
+virustotal-api
+binaryedge
+hunterio
+greynoise
+
+# Subdomain & Enumeration
+sublist3r
+assetfinder
+amass
+subfinder
+chaos
+
+# URL & Parameter Analysis
+urllib3
+tldextract
+paramiko
+pycurl
+
+# Authentication & Tokens
+python-jose
+jwt
+pyjwt
+oauthlib
+
+# GraphQL Security
+graphql-query
+gql
+
+# Reporting & Output
+jinja2
+markdown
+pdfkit
+openpyxl
+tabulate
+colorama
+tqdm
+
+# Database & Storage
+sqlalchemy
+alembic
+redis
+
+# Monitoring & Logging
+loguru
+prometheus-client
+opentelemetry-api
+
+# Utilities
+python-dotenv
+pydantic
+pyyaml
+click
+typer
+asyncio
+nest-asyncio
+aiofiles

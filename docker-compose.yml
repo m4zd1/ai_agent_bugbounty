@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  agent:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: bugbounty-agent
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - SHODAN_API_KEY=${SHODAN_API_KEY}
+      - CENSYS_API_ID=${CENSYS_API_ID}
+      - CENSYS_API_SECRET=${CENSYS_API_SECRET}
+    volumes:
+      - ./reports:/app/reports
+      - ./logs:/app/logs
+      - ./memory_store:/app/memory_store
+      - ./vector_db:/app/vector_db
+      - ./.env:/app/.env
+    networks:
+      - security
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 4G
+        reservations:
+          cpus: '1'
+          memory: 2G
+
+  redis:
+    image: redis:7-alpine
+    container_name: agent-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - security
+
+  postgres:
+    image: postgres:15-alpine
+    container_name: agent-db
+    environment:
+      POSTGRES_DB: bugbounty
+      POSTGRES_USER: agent
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-securepassword}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - security
+
+networks:
+  security:
+    driver: bridge
+
+volumes:
+  redis_data:
+  postgres_data:
